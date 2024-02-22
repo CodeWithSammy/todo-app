@@ -44,6 +44,6 @@ export class AllTasksComponent {
     task.important=true;
     this.httpService.updateTask(task).subscribe(()=>{
       this.getAllTasks();
-    })
+    }) 
   }
 }
