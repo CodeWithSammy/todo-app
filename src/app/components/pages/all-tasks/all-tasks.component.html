@@ -1,6 +1,4 @@
-<h2 class="font-bold text-xl">My Day</h2>
-<div class="text-blue-500"><span>Sunday</span> <span>Dec21,2023</span></div>
-
+<app-page-title></app-page-title>
 <div class="flex mt-6">
   <input
     type="text"
@@ -12,13 +10,5 @@
 </div>
 
 <div class="flex flex-col mt-6">
-  <h2 class="font-bold text-xl">Tasks</h2>
-  
-  @for (task of taskList; track task){
-    <p
-    class="w-full h-16 px-4 py-2 rounded-md shadow flex items-center mt-2 mb-2"
-  >
-    {{task.title}}
-  </p>
-  }
+<app-task-list [taskList]="taskList"></app-task-list>
 </div>

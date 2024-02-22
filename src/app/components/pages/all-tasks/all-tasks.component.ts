@@ -1,11 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpService } from '../../../services/http.service';
+import { DatePipe } from '@angular/common';
+import { PageTitleComponent } from '../../page-title/page-title.component';
+import { TaskListComponent } from '../../task-list/task-list.component';
 
 @Component({
   selector: 'app-all-tasks',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,DatePipe,PageTitleComponent,TaskListComponent],
   templateUrl: './all-tasks.component.html',
   styleUrl: './all-tasks.component.scss'
 })
@@ -13,6 +16,7 @@ export class AllTasksComponent {
   newTask ='';
   taskList: any[]=[];
   httpService=inject(HttpService);
+  
   ngOnInit(){
     this.getAllTasks();
   }
