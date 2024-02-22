@@ -3,7 +3,6 @@
       type="text"
       class="h-10 w-80 rounded-lg p-4"
       placeholder="Search tasks"
-      [(ngModel)]="searchTerm"
-      (blur)="onSearch()"
+      [formControl]="searchControl"
     />
 </header>
