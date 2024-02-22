@@ -33,4 +33,17 @@ export class AllTasksComponent {
       this.taskList = result;
     })
   }
+  onComplete(task:any){
+    task.completed=true;
+    
+    this.httpService.updateTask(task).subscribe(()=>{
+      this.getAllTasks();
+    })
+  }
+  onImportant(task:any){
+    task.important=true;
+    this.httpService.updateTask(task).subscribe(()=>{
+      this.getAllTasks();
+    })
+  }
 }
